@@ -42,7 +42,8 @@
         "drupalcommerce/commerce_base": "dev-8.x-1.x",
         "oomphinc/composer-installers-extender": "^1.1",
         "webflo/drupal-finder": "^1.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "wikimedia/composer-merge-plugin": "^1.4"
     },
     "require-dev": {
         "behat/mink": "1.7.x-dev",
@@ -103,6 +104,11 @@
             ],
             "drush/contrib/{$name}": [
                 "type:drupal-drush"
+            ]
+        },
+        "merge-plugin": {
+            "include": [
+                "web/profiles/catshop/composer.json"
             ]
         }
     }

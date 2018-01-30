@@ -1,0 +1,4 @@
+[submodule "web/profiles/catshop"]
+	path = web/profiles/catshop
+	url = https://github.com/catworking/catshop.git
+	branch = master

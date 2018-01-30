@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+
+  drupal:
+    image: registry.cn-hangzhou.aliyuncs.com/catshop/catshop:dev
+    ports:
+      - 80:80
+    volumes:
+      - .:/app
+    restart: always
+    environment:
+      WEB_DOCUMENT_ROOT: /app/web
+      XDEBUG_REMOTE_CONNECT_BACK: 0
+      XDEBUG_REMOTE_HOST: docker.for.mac.host.internal
+
+  db:
+    image: mysql
+    ports:
+      - "3388:3306"
+    volumes:
+      - "./data/mysql/data:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
